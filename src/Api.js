@@ -21,11 +21,7 @@ export const moviesApi = {
 	search: (term) =>
 		api.get('search/movie', {
 			params: {
-<<<<<<< HEAD
-				query: term
-=======
 				query: encodeURIComponent(term)
->>>>>>> bd8293317388039d34d73d0e015714b65be1da17
 			}
 		})
 };
@@ -43,11 +39,7 @@ export const tvApi = {
 	search: (term) =>
 		api.get('search/tv', {
 			params: {
-<<<<<<< HEAD
-				query: term
-=======
 				query: encodeURIComponent(term)
->>>>>>> bd8293317388039d34d73d0e015714b65be1da17
 			}
 		})
 };
