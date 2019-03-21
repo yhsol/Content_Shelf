@@ -45,15 +45,15 @@ with React JS
 
 ## Api verbs
 - Movie
- - Popular
- - Now Playing
- - Upcoming
- - Search
- - Detail(add videos, similar)
+  - Popular
+  - Now Playing
+  - Upcoming
+  - Search
+  - Detail(add videos, similar)
 
 - Tv
- - Popular
- - Top Rated
- - Airing Today
- - Search
- - Detail(add vides, similar)
+  - Popular
+  - Top Rated
+  - Airing Today
+  - Search
+  - Detail(add vides, similar)
