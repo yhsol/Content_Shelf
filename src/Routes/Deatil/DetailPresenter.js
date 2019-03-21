@@ -1,1 +1,1 @@
-export default () => 'Deatil';
+export default () => 'Detail';
