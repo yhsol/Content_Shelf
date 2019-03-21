@@ -34,7 +34,11 @@ with React JS
     - componentDidMount 메서드에서 각각 필요한 api 를 정의하고, 그 값들을 this.setState 를 통해 state 값에 넣는다.
     - 해당 컴포넌트의 프레젠터를 return 하며 props들을 넣는다.
   - Search Container
-    - 
+    - movieResults, tvRestuls 값을 각각 state 에 설정한다.
+    - searchTerm 역시 설정한다. (search API 에 term 이 필요하기 때문이다.)
+    - handleSubmit 메서드를 설정하고, 해당 메서드가 실행될 때, searchByTerm 메서드를 실행하게 한다.
+    - searchByTerm 에서 api 를 정의하고 state 에 값을 넣는다.
+    - 프레젠터로 state 값과 handleSubmit 메서드를 넣는다.
 
 ## Composition in Router
 - 하나의 라우터에 추가적으로 다른 기능 혹은 컴포넌트가 필요할 때 사용할 수 있다.
