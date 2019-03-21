@@ -38,7 +38,8 @@ const HeaderItem = styled.li`
 	font-weight: ${(props) => (props.current ? '600' : '300')};
 	font-size: ${(props) => (props.current ? '15px' : '14px')};
 	transition-property: color, font-weight, font-size;
-	transition-delay: 0.1s;
+	transition-duration: 0.1s;
+	transition-timing-function: linear;
 `;
 
 const SLink = styled(Link)`
