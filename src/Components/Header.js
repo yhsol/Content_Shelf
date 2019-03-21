@@ -23,8 +23,9 @@ const HeaderTitle = styled.div`
 `;
 
 const HeaderMenu = styled.div`
-	transform: ${(props) => (props.current ? '' : 'rotate(90deg)')};
-	margin-right: 8px;
+	transform: ${(props) => (props.current ? '' : 'rotate(-90deg)')};
+	margin-right: 14px;
+	transition: transform 0.1s linear;
 `;
 
 const HeaderNav = styled.ul`display: flex;`;
@@ -50,7 +51,7 @@ const SLink = styled(Link)`
 export default withRouter(({ location: { pathname } }) => (
 	<Header>
 		<HeaderTitle>
-			<HeaderMenu current={false}>|||</HeaderMenu>
+			<HeaderMenu current={pathname === '/'}>|||</HeaderMenu>
 			<SLink to="/">Content_Shelf</SLink>
 		</HeaderTitle>
 		<HeaderNav>
