@@ -25,9 +25,9 @@ with React JS
 	  - search
 	    - term 을 props 로 넣고 params 를 새로 만들어 term 을 넣고 encode 한다.
 - Container - Presenter Pattern
+  - index - export Container!
   - Container - data (logic, api...)
   - Presenter - show!
-  - index - export Container!
 - Container
   - Movie, Tv Container
     - state 에 필요한 api 및 error, loading 값을 설정한다.
