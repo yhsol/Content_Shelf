@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import SearchPresenter from './SearchPresenter';
-import { moviesApi } from '../../Api';
+import { moviesApi, tvApi } from '../../Api';
 
 export default class extends Component {
 	state = {
 		movieResults: null,
 		tvResults: null,
-		searchTerm: "popcorn",
+		searchTerm: "",
 		error: null,
 		loading: null
 	};
@@ -23,7 +23,7 @@ export default class extends Component {
 		this.setState({ loading: true });
 		try {
 			const {data: {results: movieResults}} = await moviesApi.search(searchTerm);
-			const {data: {results: tvResults}} = await tvResults.search(searchTerm);
+			const {data: {results: tvResults}} = await tvApi.search(searchTerm);
 			this.setState({
 				movieResults: movieResults,
 				tvResults: tvResults

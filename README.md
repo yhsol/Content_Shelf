@@ -28,6 +28,13 @@ with React JS
   - Container - data (logic, api...)
   - Presenter - show!
   - index - export Container!
+- Container
+  - Movie, Tv Container
+    - state 에 필요한 api 및 error, loading 값을 설정한다.
+    - componentDidMount 메서드에서 각각 필요한 api 를 정의하고, 그 값들을 this.setState 를 통해 state 값에 넣는다.
+    - 해당 컴포넌트의 프레젠터를 return 하며 props들을 넣는다.
+  - Search Container
+    - 
 
 ## Composition in Router
 - 하나의 라우터에 추가적으로 다른 기능 혹은 컴포넌트가 필요할 때 사용할 수 있다.
