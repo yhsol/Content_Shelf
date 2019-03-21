@@ -20,10 +20,10 @@ with React JS
     - api 기본 설정 (baseURL, params)
     - movie, tv 각각의 세부 api 설정
     - detail
-	  - id 를 props 로 넣고 불러오는 정보를 `` 을 써서 props를 적용한다. 
-	  - append_to_response 값으로 videos 와 similar 설정한다.
-	- search
-	  - term 을 props 로 넣고 params 를 새로 만들어 term 을 넣고 encode 한다.
+	    - id 를 props 로 넣고 불러오는 정보를 `` 을 써서 props를 적용한다. 
+	    - append_to_response 값으로 videos 와 similar 설정한다.
+	  - search
+	    - term 을 props 로 넣고 params 를 새로 만들어 term 을 넣고 encode 한다.
 - Container - Presenter Pattern
   - Container - data (logic, api...)
   - Presenter - show!
