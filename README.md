@@ -24,6 +24,10 @@ with React JS
 	  - append_to_response 값으로 videos 와 similar 설정한다.
 	- search
 	  - term 을 props 로 넣고 params 를 새로 만들어 term 을 넣고 encode 한다.
+- Container - Presenter Pattern
+  - Container - data (logic, api...)
+  - Presenter - show!
+  - index - export Container!
 
 ## Composition in Router
 - 하나의 라우터에 추가적으로 다른 기능 혹은 컴포넌트가 필요할 때 사용할 수 있다.
