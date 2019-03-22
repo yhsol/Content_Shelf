@@ -14,31 +14,31 @@ export default class extends React.Component {
 	async componentDidMount() {
 		try {
 			// 객체 비구조화(object destructuring) -> data 에서 results 를 꺼내고, results 이름을 popular 로 변경.
-			const {data: {results: popular}} = await moviesApi.popular();
-			const {data: {results: nowPlaying}} = await moviesApi.nowPlaying();
-			const {data: {results: upcoming}} = await moviesApi.upcoming();
-			console.log(popular);
-			console.log(nowPlaying);
-			console.log(upcoming);
+			const { data: { results: popular } } = await moviesApi.popular();
+			const { data: { results: nowPlaying } } = await moviesApi.nowPlaying();
+			const { data: { results: upcoming } } = await moviesApi.upcoming();
+			// console.log(popular);
+			// console.log(nowPlaying);
+			// console.log(upcoming);
 			this.setState({
 				popular: popular,
 				nowPlaying: nowPlaying,
 				upcoming: upcoming
-			})
+			});
 		} catch {
 			this.setState({
 				error: "Can't find infomation"
-			})
+			});
 		} finally {
 			this.setState({
 				loading: false
-			})
+			});
 		}
 	}
 
 	render() {
 		const { popular, nowPlaying, upcoming, error, loading } = this.state;
-		console.log(this.state);
+		// console.log(this.state);
 		return (
 			<MoviePresenter
 				popular={popular}

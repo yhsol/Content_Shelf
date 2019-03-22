@@ -8,7 +8,7 @@ export default class extends Component {
 		tvResults: null,
 		searchTerm: "",
 		error: null,
-		loading: null
+		loading: false
 	};
 
 	handleSubmit = () => {
@@ -22,6 +22,7 @@ export default class extends Component {
 		const { searchTerm } = this.state;
 		this.setState({ loading: true });
 		try {
+			// results 값의 이름을 각각 movieResults, tvResults 로 재설정.
 			const {data: {results: movieResults}} = await moviesApi.search(searchTerm);
 			const {data: {results: tvResults}} = await tvApi.search(searchTerm);
 			this.setState({
@@ -38,8 +39,8 @@ export default class extends Component {
 	render() {
 		const { movieResults, tvResults, error, loading } = this.state;
 		const { handleSubmit } = this;
-		console.log(this.state);
-		console.log(this);
+		// console.log(this.state);
+		// console.log(this);
 		return <SearchPresenter movieResults={movieResults} tvResults={tvResults} error={error} loading={loading} handleSubmit={handleSubmit} />
 	}
 }

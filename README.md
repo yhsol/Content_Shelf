@@ -39,6 +39,15 @@ with React JS
     - handleSubmit 메서드를 설정하고, 해당 메서드가 실행될 때, searchByTerm 메서드를 실행하게 한다.
     - searchByTerm 에서 api 를 정의하고 state 에 값을 넣는다.
     - 프레젠터로 state 값과 handleSubmit 메서드를 넣는다.
+  - Detail Container
+    - Detail Container 는 id 를 비롯해 history 의 push, location 의 pathname 등이 필요하다.
+    - 그 값들은 props 로 전달받아서 쓸 수 있는데 그럴 수 있는 이유는 
+      Header 를 withRouter 로 감쌌기 때문에 Header 컴포넌트는 Router 의 위치를 알 수 있고, 
+      react Router 는 기본적으로 각 Route 로 정보들을 전달하기 때문이다.
+    - 주석 확인
+      - 검색 값이 숫자인지 숫자가 아닌지 확인 필요. 값들을 숫자로 변경해주고 숫자가 아닐때는 홈으로 보내기.
+      - 검색 대상이 영화인지 티비인지 확인 필요. 영화인지 확인하고 조건문을 통해 서로 다른 결과 보여줄 수 있게 만들기.
+      - 찾은 결과를 새로운 값이 생겼을 때 덮어 쓸 수 있게 설정. props 에서 가져오는 값 중에서 필요한 정보만 출력할 수 있게 만들기.
 
 ## Composition in Router
 - 하나의 라우터에 추가적으로 다른 기능 혹은 컴포넌트가 필요할 때 사용할 수 있다.

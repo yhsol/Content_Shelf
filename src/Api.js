@@ -8,6 +8,7 @@ const api = axios.create({
 	}
 });
 
+// get 메서드를 이용해서 각각의 data 경로로 필요한 api 정보를 가져온다.
 export const moviesApi = {
 	popular: () => api.get('movie/popular'),
 	nowPlaying: () => api.get('movie/now_playing'),
@@ -30,7 +31,7 @@ export const tvApi = {
 	popular: () => api.get('tv/popular'),
 	airingToday: () => api.get('tv/airing_today'),
 	topRated: () => api.get('tv/top_rated'),
-	showDetail: (id) =>
+	tvDetail: (id) =>
 		api.get(`tv/${id}`, {
 			params: {
 				append_to_response: 'videos, silmilar'
