@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
 		background-color: rgba(20, 20, 20, 1);
 		color: white;
 		padding-top: 60px;
+		margin: 0.8rem;
 	}
 	h1, h2, h3, h4, h5, h6 {
 		margin: 0;

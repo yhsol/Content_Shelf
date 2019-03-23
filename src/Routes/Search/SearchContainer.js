@@ -11,7 +11,8 @@ export default class extends Component {
 		loading: false
 	};
 
-	handleSubmit = () => {
+	handleSubmit = (event) => {
+		event.preventDefault();
 		const { searchTerm } = this.state;
 		if(searchTerm !== "") {
 			this.searchByTerm();
@@ -37,10 +38,10 @@ export default class extends Component {
 	}
 
 	render() {
-		const { movieResults, tvResults, error, loading } = this.state;
+		const { movieResults, tvResults, searchTerm, error, loading } = this.state;
 		const { handleSubmit } = this;
 		// console.log(this.state);
 		// console.log(this);
-		return <SearchPresenter movieResults={movieResults} tvResults={tvResults} error={error} loading={loading} handleSubmit={handleSubmit} />
+		return <SearchPresenter movieResults={movieResults} tvResults={tvResults} searchTerm={searchTerm} error={error} loading={loading} handleSubmit={handleSubmit} />
 	}
 }
