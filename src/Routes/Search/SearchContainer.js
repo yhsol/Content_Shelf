@@ -19,6 +19,13 @@ export default class extends Component {
 		}
 	}
 
+	handleInsert = (event) => {
+		const { target: { value }} = event;
+		this.setState({
+			searchTerm: value
+		})
+	};
+
 	searchByTerm = async () => {
 		const { searchTerm } = this.state;
 		this.setState({ loading: true });
@@ -29,9 +36,9 @@ export default class extends Component {
 			this.setState({
 				movieResults: movieResults,
 				tvResults: tvResults
-			})			
+			})
 		} catch {
-			this.setState({ error: "Can't find info" })
+			this.setState({ error: "CAN'T FIND SEARCH INFOMATION" })
 		} finally {
 			this.setState({	loading: false })
 		}
@@ -39,9 +46,9 @@ export default class extends Component {
 
 	render() {
 		const { movieResults, tvResults, searchTerm, error, loading } = this.state;
-		const { handleSubmit } = this;
-		// console.log(this.state);
+		const { handleSubmit, handleInsert } = this;
+		console.log(this.state);
 		// console.log(this);
-		return <SearchPresenter movieResults={movieResults} tvResults={tvResults} searchTerm={searchTerm} error={error} loading={loading} handleSubmit={handleSubmit} />
+		return <SearchPresenter movieResults={movieResults} tvResults={tvResults} searchTerm={searchTerm} error={error} loading={loading} handleSubmit={handleSubmit} handleInsert={handleInsert} />
 	}
 }

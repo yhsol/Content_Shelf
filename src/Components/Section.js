@@ -9,9 +9,11 @@ const Container = styled.div`
 `;
 
 const Title = styled.span`
-	font-size: 20px;
+	font-size: 24px;
 	display: inline-block;
-	margin: 10px 0;
+	margin: 10px 0 20px;
+	color: #757575;
+	font-weight: 600;
 `;
 
 const Grid = styled.div`

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Section from '../../Components/Section';
 import Loader from '../../Components/Loader';
+import Message from '../../Components/Message';
 
 const Container = styled.div``;
 
@@ -25,6 +26,7 @@ const MoviePresenter = ({ popular, nowPlaying, upcoming, error, loading }) =>
 			upcoming.length > 0 && (
 				<Section title="Upcoming">{upcoming.map((movie) => <span key={movie.id}>{movie.title}</span>)}</Section>
 			)}
+			{error && <Message color="#757575" text={error} />}
 		</Container>
 	);
 

@@ -13,9 +13,9 @@ export default class extends React.Component {
 
 	async componentDidMount() {
 		try {
-			const {data: {results: popular}} = await tvApi.popular();
-			const {data: {results: airingToday}} = await tvApi.airingToday();
-			const {data: {results: topRated}} = await tvApi.topRated();
+			const { data: { results: popular } } = await tvApi.popular();
+			const { data: { results: airingToday } } = await tvApi.airingToday();
+			const { data: { results: topRated } } = await tvApi.topRated();
 			// console.log(popular);
 			// console.log(airingToday);
 			// console.log(topRated);
@@ -23,15 +23,15 @@ export default class extends React.Component {
 				popular: popular,
 				airingToday: airingToday,
 				topRated: topRated
-			})
-		} catch {
+			});
+		} catch (error) {
 			this.setState({
-				error: "Can't find infomation"
-			})
+				error: "CAN'T FIND TV INFOMATION"
+			});
 		} finally {
 			this.setState({
 				loading: false
-			})
+			});
 		}
 	}
 

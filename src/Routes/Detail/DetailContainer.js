@@ -48,7 +48,7 @@ export default class extends Component {
 			}
 		} catch {
 			this.setState({
-				error: "Can't find info"
+				error: "CAN'T FIND DETAIL INFOMATION"
 			})
 		} finally {
 			this.setState({
