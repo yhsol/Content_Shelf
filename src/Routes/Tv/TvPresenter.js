@@ -9,7 +9,7 @@ const Container = styled.div``;
 
 const TvPresenter = ({ popular, airingToday, topRated, error, loading }) =>
 	loading ? (
-		<Loader />
+		<Loader color="#757575">Loading For Tv Data...</Loader>
 	) : (
 		<Container>
 			{popular &&

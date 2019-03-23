@@ -9,7 +9,7 @@ const Container = styled.div``;
 
 const MoviePresenter = ({ popular, nowPlaying, upcoming, error, loading }) =>
 	loading ? (
-		<Loader />
+		<Loader color="#757575">Loading For Movie Data...</Loader>
 	) : (
 		<Container>
 			{popular &&

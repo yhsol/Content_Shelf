@@ -26,7 +26,7 @@ const SearchPresenter = ({ movieResults, tvResults, searchTerm, error, loading, 
 			<Input value={searchTerm} onChange={handleInsert} placeholder="Search..." />
 		</Form>
 		{loading ? (
-			<Loader />
+			<Loader color="#757575">Loading For Search Results...</Loader>
 		) : (
 			<React.Fragment>
 				{movieResults &&
