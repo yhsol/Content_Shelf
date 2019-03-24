@@ -1,8 +1,41 @@
 # Content_Shelf
 with React JS
 
+## Screens (Routes)
+- Content_Shelf (have Movie and Tv Container)
+- Movie
+- Tv
+- Search
+- Detail
+
+## Api verbs
+- Movie
+  - Popular
+  - Now Playing
+  - Upcoming
+  - Search
+  - Detail(add videos, similar)
+
+- Tv
+  - Popular
+  - Top Rated
+  - Airing Today
+  - Search
+  - Detail(add vides, similar)
+
 ## Git refs error
 - git pull origin master 에 --allow-unrelated-histories 를 붙여서 진행한다.
+
+## Composition in Router
+- 하나의 라우터에 추가적으로 다른 기능 혹은 컴포넌트가 필요할 때 사용할 수 있다.
+```
+<Router>
+	<>
+		<Route path="/tv component={Tv} />
+		<Route path="/tv/popular render={() => <h1>Popular</h1>}>
+	</>
+</Router>
+```
 
 ## Building Process
 - make Components, Routes directory.
@@ -32,7 +65,7 @@ with React JS
   - index - export Container!
   - Container - data (logic, api...)
   - Presenter - show!
-  
+
 - Container
   - Movie, Tv Container
     - state 에 필요한 api 및 error, loading 값을 설정한다.
@@ -74,36 +107,3 @@ with React JS
        - Form 의 onSubmit 에 handleSubmit 메서드를 적용한다.
        - Input 의 value 에 searchTerm 을 설정한다. 그럼으로써 SearchContainer 의 state 값(searchTerm) 과 연결이 되면서 해당 데이터를 추적할 수 있다.
        - 또한 onChange 에 handleInsert 메서드를 적용해서 serachTerm 을 input 의 value 값(event 의 target 의 value 값)으로 설정한다.
-
-## Composition in Router
-- 하나의 라우터에 추가적으로 다른 기능 혹은 컴포넌트가 필요할 때 사용할 수 있다.
-```
-<Router>
-	<>
-		<Route path="/tv component={Tv} />
-		<Route path="/tv/popular render={() => <h1>Popular</h1>}>
-	</>
-</Router>
-```
-
-## Screens (Routes)
-- Content_Shelf (have Movie and Tv Container)
-- Movie
-- Tv
-- Search
-- Detail
-
-## Api verbs
-- Movie
-  - Popular
-  - Now Playing
-  - Upcoming
-  - Search
-  - Detail(add videos, similar)
-
-- Tv
-  - Popular
-  - Top Rated
-  - Airing Today
-  - Search
-  - Detail(add vides, similar)

@@ -5,7 +5,7 @@ import { moviesApi } from '../../Api';
 export default class extends React.Component {
 	state = {
 		popular: null,
-		nowPlaying: null,
+		topRated: null,
 		upcoming: null,
 		error: null,
 		loading: true
@@ -15,14 +15,14 @@ export default class extends React.Component {
 		try {
 			// 객체 비구조화(object destructuring) -> data 에서 results 를 꺼내고, results 이름을 popular 로 변경.
 			const { data: { results: popular } } = await moviesApi.popular();
-			const { data: { results: nowPlaying } } = await moviesApi.nowPlaying();
+			const { data: { results: topRated } } = await moviesApi.topRated();
 			const { data: { results: upcoming } } = await moviesApi.upcoming();
 			// console.log(popular);
-			// console.log(nowPlaying);
+			// console.log(topRated);
 			// console.log(upcoming);
 			this.setState({
 				popular: popular,
-				nowPlaying: nowPlaying,
+				topRated: topRated,
 				upcoming: upcoming
 			});
 		} catch {
@@ -37,12 +37,12 @@ export default class extends React.Component {
 	}
 
 	render() {
-		const { popular, nowPlaying, upcoming, error, loading } = this.state;
+		const { popular, topRated, upcoming, error, loading } = this.state;
 		// console.log(this.state);
 		return (
 			<MoviePresenter
 				popular={popular}
-				nowPlaying={nowPlaying}
+				topRated={topRated}
 				upcoming={upcoming}
 				error={error}
 				loading={loading}

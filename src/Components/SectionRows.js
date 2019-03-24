@@ -18,12 +18,10 @@ const Title = styled.span`
 
 const Grid = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-	grid-auto-columns: minmax(140px, 1fr);
-	grid-auto-rows: 230px;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+	grid-auto-columns: minmax(100px, 1fr);
+	grid-auto-rows: 180px;
 	grid-gap: 10px;
-	grid-auto-flow: column;
-	overflow: scroll;
 `;
 
 // children 은 예약된 react prop 이다.
@@ -33,7 +31,7 @@ const Grid = styled.div`
 // 그것을 nowPlaying 에 쓴다면 다음과 같이 쓸 수 있다.
 // <Section title="Now Playing">{nowPlaying}</Section>
 // {nowPlaying} 에서 nowPlaying 이 children 이 되는 것이다.
-const Section = ({ title, children }) => {
+const SectionRows = ({ title, children }) => {
 	return (
 		<Container>
 			<Title>{title}</Title>
@@ -42,9 +40,9 @@ const Section = ({ title, children }) => {
 	);
 };
 
-Section.propTypes = {
+SectionRows.propTypes = {
 	title: PropTypes.string.isRequired,
 	children: PropTypes.oneOfType([ PropTypes.arrayOf(PropTypes.node), PropTypes.node ])
 };
 
-export default Section;
+export default SectionRows;

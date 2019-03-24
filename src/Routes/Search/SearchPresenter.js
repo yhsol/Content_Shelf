@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Section from '../../Components/Section';
 import Loader from '../../Components/Loader';
 import Message from '../../Components/Message';
+import SectionRows from '../../Components/SectionRows';
+import PosterSmall from '../../Components/PosterSmall';
 
 const Container = styled.div``;
 
@@ -31,15 +32,35 @@ const SearchPresenter = ({ movieResults, tvResults, searchTerm, error, loading, 
 			<React.Fragment>
 				{movieResults &&
 				movieResults.length > 0 && (
-					<Section title="Movie">
-						{movieResults.map((movieResult) => <span key={movieResult.id}>{movieResult.title}</span>)}
-					</Section>
+					<SectionRows title="Movie">
+						{movieResults.map((movieResult) => (
+							<PosterSmall
+								key={movieResult.id}
+								id={movieResult.id}
+								imageUrl={movieResult.poster_path}
+								title={movieResult.original_title}
+								rating={movieResult.vote_average}
+								year={movieResult.release_date}
+								isMovie={true}
+							/>
+						))}
+					</SectionRows>
 				)}
 				{tvResults &&
 				tvResults.length > 0 && (
-					<Section title="Tv">
-						{tvResults.map((tvResult) => <span key={tvResult.id}>{tvResult.name}</span>)}
-					</Section>
+					<SectionRows title="Tv">
+						{tvResults.map((tvResult) => (
+							<PosterSmall
+								key={tvResult.id}
+								id={tvResult.id}
+								imageUrl={tvResult.poster_path}
+								title={tvResult.original_name}
+								rating={tvResult.vote_average}
+								year={tvResult.first_air_date}
+								isMovie={false}
+							/>
+						))}
+					</SectionRows>
 				)}
 				{error && <Message color="#757575" text={error} />}
 				{movieResults &&
